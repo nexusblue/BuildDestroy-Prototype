@@ -5,16 +5,23 @@ using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
-
+    // 
     public enum CraftableItem { SWORD, BOW, PICKAXE, REDPOTION,BLUEPOTION,YELLOWPOTION };
-    public enum ResourceItem { WOOD, STONE, TWINE };
+    public enum ResourceItem { WOOD, STONE, STRAW };
 
     public static int wood;
     public static int stone;
-    public static int twine;
+    public static int straw;
+
+    public static Text woodText;
+    public static Text stoneText;
+    public static Text strawText;
 
     private void Update(){
-
+        woodText.text = wood.ToString();
+        stoneText.text = stone.ToString();
+        strawText.text = straw.ToString();
+        
     }
 
     //taking button number from UI
@@ -41,14 +48,13 @@ public class Inventory : MonoBehaviour
                 }
                 break;
             case CraftableItem.BLUEPOTION:
-                if (twine >= 4 && stone >= 1){
+                if (straw >= 4 && stone >= 1){
                     success = true;
                 }
                 break;
             case CraftableItem.YELLOWPOTION:
-                if (stone >= 2 && wood >= 2 && twine >=2){
+                if (stone >= 2 && wood >= 2 && straw >=2){
                     success = true;
-
                 }
                 break;
         }

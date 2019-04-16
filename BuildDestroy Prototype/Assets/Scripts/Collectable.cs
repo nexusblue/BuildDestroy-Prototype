@@ -6,7 +6,6 @@ public class Collectable : MonoBehaviour
 {
     //go to resource script for the enum resource
     public Inventory.ResourceItem resourceType ;
-
     public void Start(){
 
     }
@@ -21,17 +20,14 @@ public class Collectable : MonoBehaviour
                 case Inventory.ResourceItem.WOOD:
                     //GameObject.FindGameObjectWithTag("Collectable").GetComponent<Inventory>().wood++;
                     Inventory.wood++;
-                    Debug.Log("wood collected:" + Inventory.wood);
                     break;
                 case Inventory.ResourceItem.STONE:
                     //GameObject.FindGameObjectWithTag("Collectable").GetComponent<Inventory>().stone++;
                     Inventory.stone++;
-                    Debug.Log("stone collected:" + Inventory.stone);
                     break;
-                case Inventory.ResourceItem.TWINE:
+                case Inventory.ResourceItem.STRAW:
                     //GameObject.FindGameObjectWithTag("Collectable").GetComponent<Inventory>().twine++;
-                    Inventory.twine++;
-                    Debug.Log("twine collected:s" + Inventory.twine );
+                    Inventory.straw++;
                     break;
             }
             SoundManager.playCollectSound();
