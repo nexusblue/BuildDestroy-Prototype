@@ -22,11 +22,9 @@ public class Collectable : MonoBehaviour
                     Inventory.wood++;
                     break;
                 case Inventory.ResourceItem.STONE:
-                    //GameObject.FindGameObjectWithTag("Collectable").GetComponent<Inventory>().stone++;
                     Inventory.stone++;
                     break;
                 case Inventory.ResourceItem.STRAW:
-                    //GameObject.FindGameObjectWithTag("Collectable").GetComponent<Inventory>().twine++;
                     Inventory.straw++;
                     break;
             }
