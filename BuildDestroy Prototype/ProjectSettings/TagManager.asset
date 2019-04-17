@@ -5,7 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Collectable
-  - Breakable
+  - Pickaxe
+  - BreakTree
+  - BreakHay
+  - BreakRock
   layers:
   - Default
   - TransparentFX

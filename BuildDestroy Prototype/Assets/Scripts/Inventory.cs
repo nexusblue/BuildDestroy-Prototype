@@ -13,9 +13,9 @@ public class Inventory : MonoBehaviour
     public static int stone;
     public static int straw;
 
-    public static Text woodText;
-    public static Text stoneText;
-    public static Text strawText;
+    public Text woodText;
+    public Text stoneText;
+    public Text strawText;
 
     private void Update(){
         woodText.text = wood.ToString();

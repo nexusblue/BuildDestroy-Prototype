@@ -20,9 +20,16 @@ public class player : MonoBehaviour
     bool usingWood = false;
     bool usingStone = false;
 
+    public bool pickaxeInMotion;
+    public GameObject pickAxe;
+    Animator anim;
+
+    public Inventory.ResourceItem resourceType;
+
     // Start is called before the first frame update
     void Start()
     {
+        anim = pickAxe.GetComponent<Animator>();
         inventory[0].GetComponent<Outline>().enabled = true;
         for (int i = 1; i < inventory.Length; i++){
             inventory[i].GetComponent<Outline>().enabled = false;
@@ -34,54 +41,70 @@ public class player : MonoBehaviour
     {
         SelectItem();
         PlaceItem();
+        bool pickaxeName = anim.GetBool("PickaxeThrow");
+        if (!pickaxeName)
+        {
+            if (Input.mouseScrollDelta.y > 0)
+            {
+                inventory[selectedInventory].GetComponent<Outline>().enabled = false;
+                selectedInventory++;
+                if (selectedInventory > (inventory.Length - 1))
+                {
+                    selectedInventory = 0;
+                }
+                inventory[selectedInventory].GetComponent<Outline>().enabled = true;
 
-        if (Input.mouseScrollDelta.y > 0){
-            inventory[selectedInventory].GetComponent<Outline>().enabled = false;
-            selectedInventory++;
-            if (selectedInventory > (inventory.Length - 1)){
-                selectedInventory = 0;
-            }
-            inventory[selectedInventory].GetComponent<Outline>().enabled = true;
+                if (selectedInventory == 0)
+                {
+                    pickaxe.SetActive(true);
+                }
+                else
+                {
+                    pickaxe.SetActive(false);
+                }
 
-            if (selectedInventory == 0){
-                pickaxe.SetActive(true);
-            }
-            else{
-                pickaxe.SetActive(false);
-            }
+                if (selectedInventory == 1)
+                {
+                    ghost.SetActive(true);
+                    placeMode = true;
+                }
+                else
+                {
+                    placeMode = false;
+                    ghost.SetActive(false);
+                }
 
-            if (selectedInventory == 1){
-                ghost.SetActive(true);
-                placeMode = true;
             }
-            else{
-                placeMode = false;
-                ghost.SetActive(false);
+            else if (Input.mouseScrollDelta.y < 0)
+            {
+                inventory[selectedInventory].GetComponent<Outline>().enabled = false;
+                selectedInventory--;
+                if (selectedInventory < 0)
+                {
+                    selectedInventory = inventory.Length - 1;
+                }
+                inventory[selectedInventory].GetComponent<Outline>().enabled = true;
+                if (selectedInventory == 0)
+                {
+                    pickaxe.SetActive(true);
+                }
+                else
+                {
+                    pickaxe.SetActive(false);
+                }
+                if (selectedInventory == 1)
+                {
+                    placeMode = true;
+                    ghost.SetActive(true);
+                }
+                else
+                {
+                    placeMode = false;
+                    ghost.SetActive(false);
+                }
             }
-
         }
-        else if (Input.mouseScrollDelta.y < 0){
-            inventory[selectedInventory].GetComponent<Outline>().enabled = false;
-            selectedInventory--;
-            if (selectedInventory < 0){
-                selectedInventory = inventory.Length - 1;
-            }
-            inventory[selectedInventory].GetComponent<Outline>().enabled = true;
-            if (selectedInventory == 0){
-                pickaxe.SetActive(true);
-            }
-            else{
-                pickaxe.SetActive(false);
-            }
-            if (selectedInventory == 1){
-                placeMode = true;
-                ghost.SetActive(true);
-            }
-            else{
-                placeMode = false;
-                ghost.SetActive(false);
-            }
-        }
+
     }
 
     private void PlaceItem()
@@ -96,15 +119,15 @@ public class player : MonoBehaviour
             {
                 ghost.SetActive(true);
                 ghost.transform.position = hit.point;
-                if (Input.GetMouseButtonDown(0) && usingStraw && Inventory.straw >= 0){
+                if (Input.GetMouseButtonDown(0) && usingStraw && Inventory.straw >= 1){
                     Instantiate(Resources.Load("BuildStraw"), ghost.transform.position, ghost.transform.rotation);
                     Inventory.straw--;
                 }
-                if (Input.GetMouseButtonDown(0) && usingWood && Inventory.wood >= 0){
+                if (Input.GetMouseButtonDown(0) && usingWood && Inventory.wood >= 1){
                     Instantiate(Resources.Load("BuildWood"), ghost.transform.position, ghost.transform.rotation);
                     Inventory.wood--;
                 }
-                if (Input.GetMouseButtonDown(0) && usingStone && Inventory.stone >= 0){
+                if (Input.GetMouseButtonDown(0) && usingStone && Inventory.stone >= 1){
                     Instantiate(Resources.Load("BuildStone"), ghost.transform.position, ghost.transform.rotation);
                     Inventory.stone--;
 
