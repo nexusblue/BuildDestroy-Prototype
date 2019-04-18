@@ -7,8 +7,8 @@ TagManager:
   - Collectable
   - Pickaxe
   - BreakTree
-  - BreakHay
   - BreakRock
+  - BreakStraw
   layers:
   - Default
   - TransparentFX

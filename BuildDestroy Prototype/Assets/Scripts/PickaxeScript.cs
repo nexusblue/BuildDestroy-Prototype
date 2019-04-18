@@ -30,14 +30,20 @@ public class PickaxeScript : MonoBehaviour
         anim.SetBool("PickaxeThrow", false);
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.tag == "Breakable"){
+    private void OnTriggerExit(Collider other){
+        if (other.tag == "BreakTree"){
             Destroy(other.gameObject);
-            Instantiate(Resources.Load("BuildStraw"), other.transform.position, other.transform.rotation);
+            Instantiate(Resources.Load("Woods"), other.transform.position, other.transform.rotation);
             //Instantiate(Resources.Load("BuildWood"), new Vector3(0 ,0,0), other.transform.rotation);
             //Instantiate(Resources.Load("CollectStone"), other.transform.position, other.transform.rotation);
-
+        }
+        if (other.tag == "BreakRock"){
+            Destroy(other.gameObject);
+            Instantiate(Resources.Load("Rocks"), other.transform.position, other.transform.rotation);
+        }
+        if (other.tag == "BreakStraw"){
+            Destroy(other.gameObject);
+            Instantiate(Resources.Load("Straws"), other.transform.position, other.transform.rotation);
         }
 
     }
