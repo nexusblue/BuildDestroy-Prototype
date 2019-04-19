@@ -9,6 +9,7 @@ TagManager:
   - BreakTree
   - BreakRock
   - BreakStraw
+  - NPCCanvas
   layers:
   - Default
   - TransparentFX
