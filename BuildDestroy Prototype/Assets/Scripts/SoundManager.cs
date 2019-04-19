@@ -10,6 +10,9 @@ public class SoundManager : MonoBehaviour
     public static AudioClip jumpSound;
     static AudioSource jumpSrc;
 
+    public static AudioClip breakSound;
+    static AudioSource breakSrc;
+
 
     // Start is called before the first frame update
     void Start(){
@@ -19,6 +22,9 @@ public class SoundManager : MonoBehaviour
 
         jumpSound = Resources.Load<AudioClip>("JumpYell");
         jumpSrc = GetComponent<AudioSource>();
+
+        breakSound = Resources.Load<AudioClip>("BreakNoise");
+        breakSrc = GetComponent<AudioSource>();
     }
 
     public static void playCollectSound(){
@@ -27,6 +33,11 @@ public class SoundManager : MonoBehaviour
 
     public static void playJumpYell(){
         jumpSrc.PlayOneShot(jumpSound);
+    }
+
+    public static void playBreakNoise()
+    {
+        jumpSrc.PlayOneShot(breakSound);
     }
 
 

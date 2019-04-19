@@ -34,16 +34,17 @@ public class PickaxeScript : MonoBehaviour
         if (other.tag == "BreakTree"){
             Destroy(other.gameObject);
             Instantiate(Resources.Load("Woods"), other.transform.position, other.transform.rotation);
-            //Instantiate(Resources.Load("BuildWood"), new Vector3(0 ,0,0), other.transform.rotation);
-            //Instantiate(Resources.Load("CollectStone"), other.transform.position, other.transform.rotation);
+            SoundManager.playBreakNoise();
         }
         if (other.tag == "BreakRock"){
             Destroy(other.gameObject);
             Instantiate(Resources.Load("Rocks"), other.transform.position, other.transform.rotation);
+            SoundManager.playBreakNoise();
         }
         if (other.tag == "BreakStraw"){
             Destroy(other.gameObject);
             Instantiate(Resources.Load("Straws"), other.transform.position, other.transform.rotation);
+            SoundManager.playBreakNoise();
         }
 
     }

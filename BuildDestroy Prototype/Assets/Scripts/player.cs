@@ -143,7 +143,7 @@ public class player : MonoBehaviour
     private void SelectItem()
     {
         // code for which item was selected
-        if (usingStraw == false && Input.GetKeyDown(KeyCode.Z))
+        if (usingStraw == false && Input.GetKeyDown("1"))
         {
             usingStraw = true;
             usingWood = false;
@@ -152,7 +152,7 @@ public class player : MonoBehaviour
             Wood.GetComponent<Outline>().enabled = false;
             Stone.GetComponent<Outline>().enabled = false;
         }
-        if (usingWood == false && Input.GetKeyDown(KeyCode.X))
+        if (usingWood == false && Input.GetKeyDown("2"))
         {
             usingStraw = false;
             usingWood = true;
@@ -161,7 +161,7 @@ public class player : MonoBehaviour
             Wood.GetComponent<Outline>().enabled = true;
             Stone.GetComponent<Outline>().enabled = false;
         }
-        if (usingStone == false && Input.GetKeyDown(KeyCode.C))
+        if (usingStone == false && Input.GetKeyDown("3"))
         {
             usingStraw = false;
             usingWood = false;

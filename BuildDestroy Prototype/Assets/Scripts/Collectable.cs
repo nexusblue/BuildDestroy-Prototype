@@ -14,7 +14,7 @@ public class Collectable : MonoBehaviour
     //destroy game collectable and add one to inventory 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player" || other.gameObject.tag == "Pickaxe")
         {
             switch (resourceType){
                 case Inventory.ResourceItem.WOOD:
