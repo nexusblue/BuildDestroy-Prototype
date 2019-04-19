@@ -192,6 +192,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FPSController
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -235,6 +239,10 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2000000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
+      propertyPath: far clip plane
+      value: 3000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
@@ -426,7 +434,7 @@ GameObject:
   - component: {fileID: 844329255}
   - component: {fileID: 844329257}
   m_Layer: 0
-  m_Name: Pig 2
+  m_Name: Pig_Wood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -517,6 +525,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11f5cc8ba49b2ce48b1c402899fb51ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueData: {fileID: 11400000, guid: 007693790707c1944a384dc0c420acf0, type: 2}
   wanderRange: 10
   minWanderWaitTime: 5
   maxWanderWaitTime: 10
@@ -588,7 +597,7 @@ GameObject:
   - component: {fileID: 915034984}
   - component: {fileID: 915034986}
   m_Layer: 0
-  m_Name: Pig 3
+  m_Name: Pig_Stone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -679,6 +688,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11f5cc8ba49b2ce48b1c402899fb51ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueData: {fileID: 11400000, guid: d8f2430dfbd2cc743ae91e1d3ec141c6, type: 2}
   wanderRange: 10
   minWanderWaitTime: 5
   maxWanderWaitTime: 10
@@ -891,7 +901,7 @@ GameObject:
   - component: {fileID: 2023215717}
   - component: {fileID: 2023215719}
   m_Layer: 0
-  m_Name: Pig 1
+  m_Name: Pig_Straw
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -982,6 +992,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11f5cc8ba49b2ce48b1c402899fb51ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueData: {fileID: 11400000, guid: 6efbe554b0da5f547865e4155cd4c8e1, type: 2}
   wanderRange: 10
   minWanderWaitTime: 5
   maxWanderWaitTime: 10

@@ -3,6 +3,8 @@ using UnityEngine.AI;
 
 public class NPCBehavior : MonoBehaviour
 {
+	public DialogueData dialogueData;
+
 	GameObject npcCanvas;
 	NavMeshAgent agent;
 
@@ -87,7 +89,7 @@ public class NPCBehavior : MonoBehaviour
 
 	void GetRandomDialogue()
 	{
-		//npcCanvas.GetComponent<NPCCanvas>().dialogueText.text = dialogue[randomIndex];
+		npcCanvas.GetComponent<NPCCanvas>().dialogueText.text = dialogueData.dialogues[Random.Range(0, dialogueData.dialogues.Length)];
 	}
 
 	void OnTriggerStay(Collider other)
