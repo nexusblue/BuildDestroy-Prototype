@@ -96,7 +96,7 @@ public class NPCBehavior : MonoBehaviour
 	{
 		if(other.CompareTag("Player"))
 		{
-			if(Input.GetKeyDown(KeyCode.F))
+			if(Input.GetKeyDown(KeyCode.E))
 			{
 				StopMoving();
 

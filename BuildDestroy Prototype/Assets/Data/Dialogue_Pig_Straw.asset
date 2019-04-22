@@ -13,4 +13,7 @@ MonoBehaviour:
   m_Name: Dialogue_Pig_Straw
   m_EditorClassIdentifier: 
   dialogues:
-  - 
+  - 'Oh no! The Big Mean Ol'' Wolf is coming to kill us! Can you build some houses
+    for us? Make mine out of straw!
+
+'
