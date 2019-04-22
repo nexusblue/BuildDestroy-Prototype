@@ -21,7 +21,7 @@ public class player : MonoBehaviour
     bool usingStone = false;
 
     public bool pickaxeInMotion;
-    public GameObject pickAxe;
+
     Animator anim;
 
     public Inventory.ResourceItem resourceType;
@@ -29,7 +29,7 @@ public class player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        anim = pickAxe.GetComponent<Animator>();
+        anim = pickaxe.GetComponent<Animator>();
         inventory[0].GetComponent<Outline>().enabled = true;
         for (int i = 1; i < inventory.Length; i++){
             inventory[i].GetComponent<Outline>().enabled = false;
@@ -114,13 +114,15 @@ public class player : MonoBehaviour
             //create ray cast where mouse is
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
             //if ray hits something 
             if (Physics.Raycast(ray, out hit))
             {
                 ghost.SetActive(true);
-                ghost.transform.position = hit.point;
+                ghost.transform.position = hit.point + Vector3.up;
+                
                 if (Input.GetMouseButtonDown(0) && usingStraw && Inventory.straw >= 1){
-                    Instantiate(Resources.Load("BuildStraw"), ghost.transform.position, ghost.transform.rotation);
+                    Instantiate(Resources.Load("BuildStraw"), ghost.transform.position , ghost.transform.rotation);
                     Inventory.straw--;
                 }
                 if (Input.GetMouseButtonDown(0) && usingWood && Inventory.wood >= 1){

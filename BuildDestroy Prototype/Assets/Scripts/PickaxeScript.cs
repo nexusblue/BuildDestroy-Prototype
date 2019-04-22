@@ -7,9 +7,6 @@ public class PickaxeScript : MonoBehaviour
     //public GameObject player;
     Animator anim ;
     public float coolDown = 1f;
-    public Transform place1;
-    public float posX;
-    public float posY;
 
     // Start is called before the first frame update
     void Start(){
